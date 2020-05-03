@@ -13,6 +13,12 @@ public class Main {
             if (counter % 3 == 0) hospital.printPatient(hospital.getQueue().pollLast().toString() + " без очереди");
             else hospital.printPatient(hospital.getQueue().poll().toString());
         }
+        System.out.println();
+
+        System.out.println("Гонка на выбывание");
+        DequeClass race = new DequeClass(20);
+        race.printRaceOut();
+
     }
 
 }
