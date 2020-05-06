@@ -29,6 +29,13 @@ public class Main {
         System.out.println("Игра Дженга");
         System.out.println(listClass.fillInJenga(20));
         listClass.printJengaGame();
+        System.out.println();
+
+        System.out.println("Список кредитных карточек");
+        SetClass.Card card1 = new SetClass.Card(5457);
+        SetClass.Card card2 = new SetClass.Card(5478);
+        SetClass.Card card3 = new SetClass.Card(5459);
+        System.out.println(SetClass.getCards());
     }
 
 }
