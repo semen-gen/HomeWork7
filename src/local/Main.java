@@ -1,5 +1,7 @@
 package local;
 
+import java.util.Collections;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -54,6 +56,24 @@ public class Main {
         MapClass.register("sen-sey", "Степан");
         MapClass.unRegister("zayka");
         System.out.println(MapClass.getUsers());
+        System.out.println();
+
+        System.out.println("Список учеников");
+        new SortingClass.Pupil("Вася Петечкин", 5, 10);
+        new SortingClass.Pupil("Оля Ватрушкина", 3, 11);
+        new SortingClass.Pupil("Гена Лопух", 5, 12);
+        new SortingClass.Pupil("Дима Косяк", 2, 10);
+        new SortingClass.Pupil("Федя Рашпиль", 4, 11);
+
+        SortingClass.printPupils();
+        Collections.sort(SortingClass.getPupils());
+        SortingClass.printPupils();
+        MarkComparator mc = new MarkComparator();
+        SortingClass.getPupils().sort(mc);
+        SortingClass.printPupils();
+        AgeComparator ac = new AgeComparator();
+        SortingClass.getPupils().sort(ac);
+        SortingClass.printPupils();
     }
 
 }
