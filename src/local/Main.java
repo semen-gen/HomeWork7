@@ -36,6 +36,14 @@ public class Main {
         SetClass.Card card2 = new SetClass.Card(5478);
         SetClass.Card card3 = new SetClass.Card(5459);
         System.out.println(SetClass.getCards());
+        System.out.println();
+
+        System.out.println("Список грузов");
+        SetClass.Cargo cargo1 = new SetClass.Cargo(15);
+        SetClass.Cargo cargo2 = new SetClass.Cargo(25);
+        SetClass.Cargo cargo3 = new SetClass.Cargo(20);
+        SetClass.Cargo cargo4 = new SetClass.Cargo(100);
+        SetClass.checkTruck();
     }
 
 }
