@@ -44,6 +44,16 @@ public class Main {
         SetClass.Cargo cargo3 = new SetClass.Cargo(20);
         SetClass.Cargo cargo4 = new SetClass.Cargo(100);
         SetClass.checkTruck();
+        System.out.println();
+
+        System.out.println("Соц сеть");
+        MapClass.register("semen_gen", "Иван");
+        MapClass.register("zayka", "Оля");
+        MapClass.register("zver", "Лёха");
+        MapClass.register("zver", "Лёха");
+        MapClass.register("sen-sey", "Степан");
+        MapClass.unRegister("zayka");
+        System.out.println(MapClass.getUsers());
     }
 
 }
