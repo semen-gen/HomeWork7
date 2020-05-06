@@ -24,6 +24,11 @@ public class Main {
         ListClass listClass = new ListClass();
         System.out.println(listClass.fillInList(6));
         listClass.printGetList();
+        System.out.println();
+
+        System.out.println("Игра Дженга");
+        System.out.println(listClass.fillInJenga(20));
+        listClass.printJengaGame();
     }
 
 }
