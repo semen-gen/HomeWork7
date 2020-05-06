@@ -18,7 +18,12 @@ public class Main {
         System.out.println("Гонка на выбывание");
         DequeClass race = new DequeClass(20);
         race.printRaceOut();
+        System.out.println();
 
+        System.out.println("Список в котором добавляем элементы поочередно в начало и конец списка");
+        ListClass listClass = new ListClass();
+        System.out.println(listClass.fillInList(6));
+        listClass.printGetList();
     }
 
 }
