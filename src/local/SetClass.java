@@ -73,16 +73,16 @@ public class SetClass {
         if (sumMass > MAX_MASS) {
             int overload = sumMass - MAX_MASS;
             System.out.println("Перегруз на " + overload);
-            higher(overload);
+            eliminateOverload(overload);
         }
         else {
             System.out.println("Отправляем грузовик");
-            ceiling();
+            cargoDelivery();
         }
 
     }
 
-    private static void higher(int overload) {
+    private static void eliminateOverload(int overload) {
         Cargo minCargo = null, maxCargo = null, remove;
         for (Cargo item : getTruck()) {
             if (item.getMASS() >= overload) {
@@ -102,7 +102,7 @@ public class SetClass {
         checkTruck();
     }
 
-    private static void ceiling() {
+    private static void cargoDelivery() {
         Iterator<Cargo> i = TRUCK.iterator();
 
         while (i.hasNext()) {
