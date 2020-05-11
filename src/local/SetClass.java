@@ -60,14 +60,7 @@ public class SetClass {
     }
 
     public static void checkTruck() {
-        int sumMass = 0;
-        Cargo item;
-
-        for (Cargo cargo : TRUCK) {
-            item = cargo;
-            System.out.println(item.getMASS());
-            sumMass += item.getMASS();
-        }
+        int sumMass = getSumMass();
         System.out.println("Суммарная масса грузов " + sumMass);
 
         if (sumMass > MAX_MASS) {
@@ -79,7 +72,16 @@ public class SetClass {
             System.out.println("Отправляем грузовик");
             cargoDelivery();
         }
+    }
 
+
+    private static int getSumMass() {
+        int sumMass = 0;
+        for (Cargo cargo : TRUCK) {
+            System.out.println(cargo.getMASS());
+            sumMass += cargo.getMASS();
+        }
+        return sumMass;
     }
 
     private static void eliminateOverload(int overload) {
