@@ -1,4 +1,4 @@
-package local;
+package local.SetClass;
 
 import java.util.*;
 

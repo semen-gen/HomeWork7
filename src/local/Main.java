@@ -1,5 +1,7 @@
 package local;
 
+import local.SetClass.SetClass;
+
 import java.util.Collections;
 
 public class Main {
