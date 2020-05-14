@@ -3,15 +3,16 @@ package local.SetClass;
 import java.util.HashSet;
 import java.util.Iterator;
 
-public class Trucks {
+public class Truck {
 
-    public final static int MAX_MASS;
+    private final int MAX_MASS;
 
-    private final static HashSet<Cargo> TRUCK;
+    private final HashSet<Cargo> CARGOS;
 
-    static {
-        MAX_MASS = 150;
-        TRUCK = new HashSet<>();
+
+    public Truck(int maxMass, HashSet<Cargo> cargos) {
+        MAX_MASS = maxMass;
+        CARGOS = cargos;
     }
 
     public static class Cargo {
@@ -20,7 +21,6 @@ public class Trucks {
 
         public Cargo(int mass) {
             MASS = mass;
-            TRUCK.add(this);
         }
 
         public int getMASS() {
@@ -29,11 +29,11 @@ public class Trucks {
 
     }
 
-    public static HashSet<Cargo> getTruck() {
-        return TRUCK;
+    public HashSet<Cargo> getTruck() {
+        return CARGOS;
     }
 
-    public static void checkTruck() {
+    public void checkTruck() {
         int sumMass = getSumMass();
         System.out.println("Суммарная масса грузов " + sumMass);
 
@@ -49,16 +49,16 @@ public class Trucks {
     }
 
 
-    private static int getSumMass() {
+    private int getSumMass() {
         int sumMass = 0;
-        for (Cargo cargo : TRUCK) {
+        for (Cargo cargo : CARGOS) {
             System.out.println(cargo.getMASS());
             sumMass += cargo.getMASS();
         }
         return sumMass;
     }
 
-    private static void eliminateOverload(int overload) {
+    private void eliminateOverload(int overload) {
         Cargo minCargo = null, maxCargo = null, remove;
         for (Cargo item : getTruck()) {
             if (item.getMASS() >= overload) {
@@ -73,13 +73,13 @@ public class Trucks {
         if (minCargo != null) remove = minCargo;
         else remove = maxCargo;
 
-        TRUCK.remove(remove);
+        CARGOS.remove(remove);
         System.out.println("Удалён груз с массой " + remove.getMASS());
         checkTruck();
     }
 
-    private static void cargoDelivery() {
-        Iterator<Cargo> i = TRUCK.iterator();
+    private void cargoDelivery() {
+        Iterator<Cargo> i = CARGOS.iterator();
 
         while (i.hasNext()) {
             System.out.println("Выгружен товар с массой " + i.next().getMASS());

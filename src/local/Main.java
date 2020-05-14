@@ -1,9 +1,10 @@
 package local;
 
 import local.SetClass.SetClass;
-import local.SetClass.Trucks;
+import local.SetClass.Truck;
 
 import java.util.Collections;
+import java.util.HashSet;
 
 public class Main {
 
@@ -44,11 +45,13 @@ public class Main {
         System.out.println();
 
         System.out.println("Список грузов");
-        Trucks.Cargo cargo1 = new Trucks.Cargo(15);
-        Trucks.Cargo cargo2 = new Trucks.Cargo(25);
-        Trucks.Cargo cargo3 = new Trucks.Cargo(20);
-        Trucks.Cargo cargo4 = new Trucks.Cargo(100);
-        Trucks.checkTruck();
+        HashSet<Truck.Cargo> cargos = new HashSet<>();
+        cargos.add( new Truck.Cargo(15));
+        cargos.add( new Truck.Cargo(25));
+        cargos.add( new Truck.Cargo(20));
+        cargos.add( new Truck.Cargo(100));
+        Truck truck = new Truck(150, cargos);
+        truck.checkTruck();
         System.out.println();
 
         System.out.println("Соц сеть");
