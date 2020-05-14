@@ -1,6 +1,7 @@
 package local;
 
 import local.SetClass.SetClass;
+import local.SetClass.Trucks;
 
 import java.util.Collections;
 
@@ -43,11 +44,11 @@ public class Main {
         System.out.println();
 
         System.out.println("Список грузов");
-        SetClass.Cargo cargo1 = new SetClass.Cargo(15);
-        SetClass.Cargo cargo2 = new SetClass.Cargo(25);
-        SetClass.Cargo cargo3 = new SetClass.Cargo(20);
-        SetClass.Cargo cargo4 = new SetClass.Cargo(100);
-        SetClass.checkTruck();
+        Trucks.Cargo cargo1 = new Trucks.Cargo(15);
+        Trucks.Cargo cargo2 = new Trucks.Cargo(25);
+        Trucks.Cargo cargo3 = new Trucks.Cargo(20);
+        Trucks.Cargo cargo4 = new Trucks.Cargo(100);
+        Trucks.checkTruck();
         System.out.println();
 
         System.out.println("Соц сеть");
